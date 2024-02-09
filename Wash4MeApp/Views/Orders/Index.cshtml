@@ -1,0 +1,146 @@
+﻿@model IEnumerable<Wash4Me.Models.Order>
+@{
+    Layout = "~/Views/Shared/_SuperAdminLayout.cshtml";
+    ViewData["Title"] = "Index";
+}
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
+<link href="https://cdn.datatables.net/1.13.7/css/dataTables.bootstrap5.min.css">
+<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+<script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap5.min.js"></script>
+
+<div class="container-fluid">
+
+    <!-- Page Header -->
+    <div class="d-md-flex d-block align-items-center justify-content-between my-4 page-header-breadcrumb">
+        <div class="my-auto">
+            <h5 class="page-title fs-21 mb-1"> Orders</h5>
+            <nav>
+                <ol class="breadcrumb mb-0">
+                    <li class="breadcrumb-item"><a href="javascript:void(0);">Orders</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">All Orders</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <!-- Page Header Close -->
+    <!-- Start:: row-1 -->
+    <div class="row">
+        <div class="col-xl-12">
+            <div class="card custom-card">
+                <div class="card-header justify-content-between">
+                    <div class="card-title">
+                        Orders
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="input-group mb-3">
+                        @* <input type="text" class="form-control" placeholder="Searching....."> 
+                                              <a asp-action="requestpayment" asp-controller="commissions" class="form-control btn btn-info" asp-route-phonenumber="@Model.First().Phone" asp-route-TotalCommission="@ViewBag.TotalCommission">Pay With Commission</a> 
+                       <button class="btn ripple btn-primary" type="button">Total Commission: #@ViewBag.TotalCommission</button> 
+                        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 d-flex justify-content-between align-items-center">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        </div>*@
+                    </div>
+                    <div class="table-responsive">
+                        <table id="example" class="table table-striped" style="width:100%">
+                            <thead>
+                                <tr>
+                                    <th>OrderCode</th>
+                                    <th>Amount Paid</th>
+                                    <th>AmountToBalance</th>
+                                    <th>TotalCost</th>
+                                    <th>Delivery Method</th>
+                                    <th>Created By</th>
+                                    <th>App User</th>
+                                    <th>Created Date</th>
+                                    <th>Last Modified</th>
+                                    <th>Order Status</th>
+                                    <th>Approved Status</th>
+                                    <th>Proceessed </th>
+                                    <th>Proceessed By</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@item.OrderCode</td>
+                                        <td>@item.AmountPaid</td>
+                                        <td>@item.AmountToBalance</td>
+                                        <td>@item.TotalCost</td>
+                                        <td>@item.DeliveryMethod</td>
+                                        <td>@item.CreatedBy</td>
+                                        <td>@item.ApplicationUser</td>
+                                        <td>@item.DateCreated.ToShortDateString()</td>
+                                        <td>@item.DateModified.ToShortDateString()</td>
+                                        <td>@item.OrderStatus</td>
+                                        <td>@item.IsApproved</td>
+                                        <td>@item.IsProcessed</td>
+                                        <td>@item.ProcessedBy</td>
+                                        <td>
+                                            <a asp-action="Edit" asp-route-id="@item.OrderId">Edit</a> |
+                                            <a asp-action="Details" asp-route-id="@item.OrderId">Details</a> |
+                                            <a asp-action="Delete" asp-route-id="@item.OrderId">Delete</a>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="card-footer d-none border-top-0">
+                    <!-- Prism Code -->
+<pre class="language-html"><code class="language-html">&lt;div class="table-responsive"&gt;
+    &lt;table class="table text-nowrap"&gt;
+        &lt;thead&gt;
+            &lt;tr&gt;
+                &lt;th scope="col"&gt;Name&lt;/th&gt;
+                &lt;th scope="col"&gt;Created On&lt;/th&gt;
+                &lt;th scope="col"&gt;Number&lt;/th&gt;
+                &lt;th scope="col"&gt;Status&lt;/th&gt;
+            &lt;/tr&gt;
+        &lt;/thead&gt;
+        &lt;tbody&gt;
+            &lt;tr&gt;
+                &lt;th scope="row"&gt;Mark&lt;/th&gt;
+                &lt;td&gt;21,Dec 2021&lt;/td&gt;
+                &lt;td&gt;+1234-12340&lt;/td&gt;
+                &lt;td&gt;&lt;span class="badge bg-outline-primary"&gt;Completed&lt;/span&gt;&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;th scope="row"&gt;Monika&lt;/th&gt;
+                &lt;td&gt;29,April 2022&lt;/td&gt;
+                &lt;td&gt;+1523-12459&lt;/td&gt;
+                &lt;td&gt;&lt;span class="badge bg-outline-warning"&gt;Failed&lt;/span&gt;&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;th scope="row"&gt;Madina&lt;/th&gt;
+                &lt;td&gt;30,Nov 2022&lt;/td&gt;
+                &lt;td&gt;+1982-16234&lt;/td&gt;
+                &lt;td&gt;&lt;span class="badge bg-outline-success"&gt;Successful&lt;/span&gt;&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;th scope="row"&gt;Bhamako&lt;/th&gt;
+                &lt;td&gt;18,Mar 2022&lt;/td&gt;
+                &lt;td&gt;+1526-10729&lt;/td&gt;
+                &lt;td&gt;&lt;span class="badge bg-outline-secondary"&gt;Pending&lt;/span&gt;&lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/tbody&gt;
+    &lt;/table&gt;
+&lt;/div&gt;</code></pre>
+                    <!-- Prism Code -->
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+    new DataTable('#example');
+</script>
+

@@ -1,0 +1,88 @@
+﻿@model Wash4Me.Models.Commission
+@{
+    ViewData["Title"] = "Add Commission";
+    Layout = "~/Views/Shared/_SuperAdminLayout.cshtml";
+}
+<div class="container-fluid">
+
+    <!-- Page Header -->
+    <div class="d-md-flex d-block align-items-center justify-content-between my-4 page-header-breadcrumb">
+        <div class="my-auto">
+            <h5 class="page-title fs-21 mb-1"> Commission</h5>
+            <nav>
+                <ol class="breadcrumb mb-0">
+                    <li class="breadcrumb-item"><a href="javascript:void(0);">Commissions</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Create Commission</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <!-- Page Header Close -->
+    <!-- Start:: row-1 -->
+    <div class="row">
+        <div class="col-xl-12">
+            <div class="card custom-card">
+                <div class="card-header justify-content-between">
+                    <div class="card-title">
+                        Commission
+                    </div>
+                </div>
+                <div class="card-body">
+                    <form asp-action="Create" method="post">
+                        <div class="row gy-4">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12">
+                                @if (ViewBag.ApplicationUserId != null)
+                                {
+                                    <div class="form-group">
+                                        <label asp-for="ApplicationUserId" class="form-label"></label>
+                                        <select asp-for="ApplicationUserId" class="form-control" asp-items="ViewBag.ApplicationUserId">
+                                            <option> -Select Customer- </option>
+                                        </select>
+                                    </div>
+                                }
+                                else
+                                {
+                                    <select>
+                                        <option>
+                                            ----------------------
+                                        </option>
+                                    </select>
+                                }
+                            </div>
+                            <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12">
+                                <label for="input-label" class="form-label">Total Amount</label>
+                                <input type="number" step='0.01' value='0.00' placeholder='0.00' class="form-control" id="Amount">
+                            </div>
+                            <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12">
+                                <label for="input-text" class="form-label">Commission</label>
+                                <input type="text" asp-for="CommissionAmount" class="form-control" id="CommissionAmount" placeholder="Commission gained" readonly>
+                            </div>
+                            <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12">
+                                <label for="input-text" class="form-label">Commission</label>
+                                <input type="text" asp-for="CommissionAmount" class="form-control" id="CommissionAmount" placeholder="Commission gained" readonly>
+                            </div>
+                            <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12">
+                                <button type="button" class="btn btn-secondary" onclick="calculateCommission()">Calculate Commission</button>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <input type="submit" value="Add Commission" class="btn btn-primary" />
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+@section Scripts {
+    <script>
+        function calculateCommission() {
+            var amount = parseFloat(document.getElementById('Amount').value);
+            var commission = amount * 0.1;
+            document.getElementById('CommissionAmount').value = commission.toFixed(2);
+        }
+    </script>
+}
