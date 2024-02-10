@@ -42,6 +42,14 @@ namespace Wash4MeApp.Controllers
             return View(order);
         }
 
+        public IActionResult Test()
+        {
+            return View();
+        }
+        public IActionResult AddOrder()
+        {
+            return View();
+        }
         // GET: Orders/Create
         public async Task<IActionResult> Create()
         {

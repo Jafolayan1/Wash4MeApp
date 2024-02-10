@@ -1,0 +1,156 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        button {
+            display: block;
+            margin-bottom: 10px;
+        }
+    </style>
+    <title>Dynamic Order Form</title>
+</head>
+<body>
+
+    <h2>Dynamic Order Form</h2>
+
+    <form id="dynamicOrderForm">
+        <table id="orderTable">
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Quantity</th>
+                    <th>ExtraCare</th>
+                    <th>Amount</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <select name="item[]">
+                            <option value="none">None</option>
+                            <option value="basic">Basic</option>
+                            <option value="premium">Premium</option>
+                        </select>
+                    </td>
+                    <td><input type="number" name="quantity[]" min="1" required></td>
+                    <td>
+                        <select name="extraCare[]">
+                            <option value="none">None</option>
+                            <option value="basic">Basic</option>
+                            <option value="premium">Premium</option>
+                        </select>
+                    </td>
+                    <td><input type="text" name="amount[]" readonly></td>
+
+                    <td>
+                        <button type="button" onclick="addRow()">Add Row</button>
+                        <button type="button" onclick="removeRow(this)">Remove</button></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <label for="totalAmount">Total Amount:</label>
+        <input type="text" id="totalAmount" name="totalAmount" readonly>
+        <td>
+            <select name="customer[]">
+                <option value="none">None</option>
+                <option value="basic">Basic</option>
+                <option value="premium">Premium</option>
+            </select>
+        </td>
+       
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        function addRow() {
+            var table = document.getElementById("orderTable");
+            var newRow = table.insertRow(table.rows.length);
+
+            var itemCell = newRow.insertCell(0);
+            var quantityCell = newRow.insertCell(1);
+            var extraCareCell = newRow.insertCell(2);
+            var amountCell = newRow.insertCell(3);
+            var actionCell = newRow.insertCell(4);
+
+            var itemInput = document.createElement("input");
+            itemInput.type = "text";
+            itemInput.name = "item[]";
+            itemInput.required = true;
+            itemCell.appendChild(itemInput);
+
+            var quantityInput = document.createElement("input");
+            quantityInput.type = "number";
+            quantityInput.name = "quantity[]";
+            quantityInput.min = "1";
+            quantityInput.required = true;
+            quantityCell.appendChild(quantityInput);
+
+            var extraCareSelect = document.createElement("select");
+            extraCareSelect.name = "extraCare[]";
+            var options = ["None", "Basic", "Premium"];
+            for (var i = 0; i < options.length; i++) {
+                var option = document.createElement("option");
+                option.value = options[i].toLowerCase();
+                option.text = options[i];
+                extraCareSelect.appendChild(option);
+            }
+            extraCareCell.appendChild(extraCareSelect);
+
+            var amountInput = document.createElement("input");
+            amountInput.type = "text";
+            amountInput.name = "amount[]";
+            amountInput.readOnly = true;
+            amountCell.appendChild(amountInput);
+
+            var removeButton = document.createElement("button");
+            removeButton.innerHTML = "Remove";
+            removeButton.type = "button";
+            removeButton.onclick = function () {
+                removeRow(this);
+            };
+            actionCell.appendChild(removeButton);
+
+            updateTotalAmount();
+        }
+
+        function removeRow(button) {
+            var row = button.parentNode.parentNode;
+            row.parentNode.removeChild(row);
+            updateTotalAmount();
+        }
+
+        function updateTotalAmount() {
+            var totalAmountInput = document.getElementById("totalAmount");
+            var amountInputs = document.getElementsByName("amount[]");
+            var totalAmount = 0;
+
+            for (var i = 0; i < amountInputs.length; i++) {
+                var amount = parseFloat(amountInputs[i].value) || 0;
+                totalAmount += amount;
+            }
+
+            totalAmountInput.value = totalAmount.toFixed(2);
+        }
+    </script>
+
+</body>
+</html>

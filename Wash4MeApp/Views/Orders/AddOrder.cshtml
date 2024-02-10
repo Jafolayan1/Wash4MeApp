@@ -1,0 +1,459 @@
+﻿@{
+    Layout = "~/Views/Shared/_SuperAdminLayout.cshtml";
+}
+<!-- Favicon -->
+<link rel="icon" href="../assets/images/brand-logos/favicon.ico" type="image/x-icon">
+
+<!-- Choices JS -->
+<script src="../assets/libs/choices.js/public/assets/scripts/choices.min.js"></script>
+
+<!-- Main Theme Js -->
+<script src="../assets/js/main.js"></script>
+
+<!-- Bootstrap Css -->
+<link id="style" href="../assets/libs/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Style Css -->
+<link href="../assets/css/styles.min.css" rel="stylesheet">
+
+<!-- Icons Css -->
+<link href="../assets/css/icons.css" rel="stylesheet">
+
+<!-- Node Waves Css -->
+<link href="../assets/libs/node-waves/waves.min.css" rel="stylesheet">
+
+<!-- Simplebar Css -->
+<link href="../assets/libs/simplebar/simplebar.min.css" rel="stylesheet">
+
+<!-- Color Picker Css -->
+<link rel="stylesheet" href="../assets/libs/flatpickr/flatpickr.min.css">
+<link rel="stylesheet" href="../assets/libs/@@simonwep/pickr/themes/nano.min.css">
+
+<!-- Choices Css -->
+<link rel="stylesheet" href="../assets/libs/choices.js/public/assets/styles/choices.min.css">
+
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet">
+
+<div class="container-fluid">
+
+    <!-- Page Header -->
+    <div class="d-md-flex d-block align-items-center justify-content-between my-4 page-header-breadcrumb">
+        <div class="my-auto">
+            <h5 class="page-title fs-21 mb-1"> Order</h5>
+            <nav>
+                <ol class="breadcrumb mb-0">
+                    <li class="breadcrumb-item"><a href="javascript:void(0);">Orders</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Add Order</li>
+                </ol>
+            </nav>
+        </div>
+
+        <div class="d-flex my-xl-auto right-content align-items-center">
+            <div class="pe-1 mb-xl-0">
+                <button type="button" class="btn btn-info btn-icon me-2 btn-b"><i class="mdi mdi-filter-variant"></i></button>
+            </div>
+            <div class="pe-1 mb-xl-0">
+                <button type="button" class="btn btn-danger btn-icon me-2"><i class="mdi mdi-star"></i></button>
+            </div>
+            <div class="pe-1 mb-xl-0">
+                <button type="button" class="btn btn-warning  btn-icon me-2"><i class="mdi mdi-refresh"></i></button>
+            </div>
+            <div class="mb-xl-0">
+                <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuDate" data-bs-toggle="dropdown" aria-expanded="false">
+                        14 Aug 2019
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuDate">
+                        <li><a class="dropdown-item" href="javascript:void(0);">2015</a></li>
+                        <li><a class="dropdown-item" href="javascript:void(0);">2016</a></li>
+                        <li><a class="dropdown-item" href="javascript:void(0);">2017</a></li>
+                        <li><a class="dropdown-item" href="javascript:void(0);">2018</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Page Header Close -->
+    <!-- Start:: row-1 -->
+    <div class="row">
+        <div class="col-xl-12">
+            <div class="card custom-card">
+                <div class="card-header justify-content-between">
+                    <div class="card-title">
+                        Order
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="row gy-4">
+                        <form>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table text-nowrap" id="orderTable">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">
+                                                    S/N
+                                                </th>
+                                                <th scope="col">
+                                                    Item
+                                                </th>
+                                                <th scope="col">
+                                                    Quantity
+                                                </th>
+                                                <th scope="col">
+                                                    Amount
+                                                </th>
+                                               
+                                                <th>Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                          @*  @foreach (var item in Model)
+                                            {*@
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td scope="row">
+                                                    <select class="js-example-basic-single" name="item">
+                                                        <option value="s-1">Select Delivery</option>
+                                                        <option value="Pickup">Pickup </option>
+                                                        <option value="Door Step">Door Step </option>
+
+
+                                                    </select>
+                                                    </td>
+                                                    <td scope="row">
+                                                    <input type="number" name="quantity[]" min="1" class="form-control" id="input-label">
+                                                    </td>
+                                                    <td>
+                                                    <input type="number" name="amount[]"  class="form-control" id="input-label" readonly>
+                                                </td>
+                                                   
+
+                                                    <td>
+                                                       <div class="hstack gap-2 flex-wrap">
+     
+                                                        <button onclick="addRow()" class="text-danger fs-14 lh-1">
+                                                            <i class="ri-delete-bin-5-line" onclick="removeRow(this)"></i>
+                                                            </button>
+                                                        </div>
+                                                   
+                                                    </td>
+                                                </tr>
+                                           @* }*@
+                                        </tbody>
+                                    </table>
+                                    <button type="button" class="btn btn-success btn-wave" onclick="addRow()">Add Item</button>
+                                </div>
+                                <h5><b>Order Info</b></h5>
+                                <div class="row gy-4">
+
+                                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12">
+                                        <label for="input-text" class="form-label">Customer</label>
+                                        <select class="js-example-basic-single" name="state">
+                                            <option value="s-1">Select Customer</option>
+                                            <option value="s-2">Bethel </option>
+                                            <option value="s-2">Oguzierem </option>
+
+
+                                        </select>
+                                    </div>
+                                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12">
+                                        <label for="input-label" class="form-label">Total Amount</label>
+                                        <input type="number" class="form-control" id="input-label">
+                                    </div>
+                                    @*<div class="col-xl-4 col-lg-6 col-md-6 col-sm-12">
+                                        <label for="input-text" class="form-label">Payment Method</label>
+                                        <select class="js-example-basic-single" name="state">
+                                            <option value="s-1">Select Payment</option>
+                                            <option value="s-2">None </option>
+                                            <option value="s-2">Cash </option>
+                                            <option value="s-2">Bank </option>
+                                            <option value="s-2">Commission </option>
+
+                                        </select>
+                                    </div>*@
+                                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12">
+                                        <label for="input-date" class="form-label">Delivery Date</label>
+                                        <input type="date" class="form-control" id="deliveryDate">
+                                    </div>
+                                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12">
+                                        <label for="input-text" class="form-label">Delivery Method</label>
+                                        <select class="js-example-basic-single" name="state">
+                                            <option value="s-1">Select Delivery</option>
+                                            <option value="Pickup">Pickup </option>
+                                            <option value="Door Step">Door Step </option>
+
+
+                                        </select>
+                                    </div>
+
+
+                                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12">
+                                        <label for="text-area" class="form-label">Textarea</label>
+                                        <textarea class="form-control" id="remark" rows="1"></textarea>
+                                    </div>
+                                </div>
+
+                                <h5><b>Extra Care</b></h5>
+                                <div class="table-responsive">
+                                    <table class="table text-nowrap" id="care">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">
+                                                    S/N
+                                                </th>
+                                                <th scope="col">
+                                                    Care
+                                                </th>
+                                                <th scope="col">
+                                                    Quantity
+                                                </th>
+                                                <th scope="col">
+                                                    Amount
+                                                </th>
+
+                                                <th>Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @*  @foreach (var item in Model)
+                                            {*@
+                                            <tr>
+                                                <td>1</td>
+                                                <td scope="row">
+                                                    <select class="js-example-basic-single" name="careItem">
+                                                        <option value="s-1">Select Care</option>
+                                                        <option value="Pickup">Startch </option>
+                                                        <option value="Door Step">Zip </option>
+                                                        <option value="Door Step">Botten </option>
+                                                        <option value="Door Step">Stain Removal </option>
+
+
+                                                    </select>
+                                                </td>
+                                                <td scope="row">
+                                                    <input type="number" name="careQuantity[]" min="1" class="form-control" id="care-label">
+                                                </td>
+                                                <td>
+                                                    <input type="number" name="careAmount[]" class="form-control" id="input-label" readonly>
+                                                </td>
+
+
+                                                <td>
+                                                    <div class="hstack gap-2 flex-wrap">
+                                                        
+                                                        <a onclick="addRow()" class="text-danger fs-14 lh-1">
+                                                            <i class="ri-delete-bin-5-line" onclick="removeRow(this)"></i>
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            @* }*@
+                                        </tbody>
+                                    </table>
+                                       <button type="button" class="btn btn-success btn-wave" onclick="addRow()">Add Care</button>
+
+                                </div>
+                            </div>
+                           
+                            <div class="btn-list">
+                                <input class="btn btn-success" type="reset" value="Reset">
+                                <input class="btn btn-warning" type="submit" value="Register">
+                            </div>
+                        </form>
+
+                       
+    
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<!-- Popper JS -->
+<script src="../assets/libs/@@popperjs/core/umd/popper.min.js"></script>
+
+<!-- Bootstrap JS -->
+<script src="../assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<!-- Defaultmenu JS -->
+<script src="../assets/js/defaultmenu.min.js"></script>
+
+<!-- Node Waves JS-->
+<script src="../assets/libs/node-waves/waves.min.js"></script>
+
+<!-- Sticky JS -->
+<script src="../assets/js/sticky.js"></script>
+
+<!-- Simplebar JS -->
+<script src="../assets/libs/simplebar/simplebar.min.js"></script>
+<script src="../assets/js/simplebar.js"></script>
+
+<!-- Color Picker JS -->
+<script src="../assets/libs/@@simonwep/pickr/pickr.es5.min.js"></script>
+
+
+
+<!-- Custom-Switcher JS -->
+<script src="../assets/js/custom-switcher.min.js"></script>
+
+<!-- Custom JS -->
+<script src="../assets/js/custom.js"></script>
+
+<!-- Jquery Cdn -->
+<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+
+<!-- Select2 Cdn -->
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+<!-- Internal Select-2.js -->
+<script src="../assets/js/select2.js"></script>
+
+<script>
+    function addRow() {
+        var table = document.getElementById("orderTable");
+        var newRow = table.insertRow(table.rows.length);
+
+        var itemCell = newRow.insertCell(0);
+        var quantityCell = newRow.insertCell(1);
+        var extraCareCell = newRow.insertCell(2);
+        var amountCell = newRow.insertCell(3);
+        var actionCell = newRow.insertCell(4);
+
+        var itemInput = document.createElement("input");
+        itemInput.type = "text";
+        itemInput.name = "item[]";
+        itemInput.required = true;
+        itemCell.appendChild(itemInput);
+
+        var quantityInput = document.createElement("input");
+        quantityInput.type = "number";
+        quantityInput.name = "quantity[]";
+        quantityInput.min = "1";
+        quantityInput.required = true;
+        quantityCell.appendChild(quantityInput);
+
+        var extraCareSelect = document.createElement("select");
+        extraCareSelect.name = "extraCare[]";
+        var options = ["None", "Basic", "Premium"];
+        for (var i = 0; i < options.length; i++) {
+            var option = document.createElement("option");
+            option.value = options[i].toLowerCase();
+            option.text = options[i];
+            extraCareSelect.appendChild(option);
+        }
+        extraCareCell.appendChild(extraCareSelect);
+
+        var amountInput = document.createElement("input");
+        amountInput.type = "text";
+        amountInput.name = "amount[]";
+        amountInput.readOnly = true;
+        amountCell.appendChild(amountInput);
+
+        var removeButton = document.createElement("button");
+        removeButton.innerHTML = "Remove";
+        removeButton.type = "button";
+        removeButton.onclick = function () {
+            removeRow(this);
+        };
+        actionCell.appendChild(removeButton);
+
+        updateTotalAmount();
+    }
+
+    function removeRow(button) {
+        var row = button.parentNode.parentNode;
+        row.parentNode.removeChild(row);
+        updateTotalAmount();
+    }
+
+    function updateTotalAmount() {
+        var totalAmountInput = document.getElementById("totalAmount");
+        var amountInputs = document.getElementsByName("amount[]");
+        var totalAmount = 0;
+
+        for (var i = 0; i < amountInputs.length; i++) {
+            var amount = parseFloat(amountInputs[i].value) || 0;
+            totalAmount += amount;
+        }
+
+        totalAmountInput.value = totalAmount.toFixed(2);
+    }
+</script>
+
+<script>
+    function addCareRow() {
+        var table = document.getElementById("care");
+        var newRow = table.insertRow(table.rows.length);
+
+        var snCell = newRow.insertCell(0);
+        var careCell = newRow.insertCell(1);
+        var quantityCell = newRow.insertCell(2);
+        var amountCell = newRow.insertCell(3);
+        var actionCell = newRow.insertCell(4);
+
+        snCell.textContent = table.rows.length;
+
+        var careSelect = document.createElement("select");
+        careSelect.className = "js-example-basic-single";
+        careSelect.name = "careItem";
+        var careOptions = ["Select Care", "Startch", "Zip", "Botten", "Stain Removal"];
+        for (var i = 0; i < careOptions.length; i++) {
+            var option = document.createElement("option");
+            option.value = careOptions[i].toLowerCase().replace(/\s+/g, '-');
+            option.text = careOptions[i];
+            careSelect.appendChild(option);
+        }
+        careCell.appendChild(careSelect);
+
+        var quantityInput = document.createElement("input");
+        quantityInput.type = "number";
+        quantityInput.name = "careQuantity[]";
+        quantityInput.min = "1";
+        quantityInput.className = "form-control";
+        quantityCell.appendChild(quantityInput);
+
+        var amountInput = document.createElement("input");
+        amountInput.type = "number";
+        amountInput.name = "careAmount[]";
+        amountInput.className = "form-control";
+        amountInput.readOnly = true;
+        amountCell.appendChild(amountInput);
+
+        var removeLink = document.createElement("a");
+        removeLink.className = "text-danger fs-14 lh-1";
+        removeLink.onclick = function () {
+            removeRow(this);
+        };
+        var removeIcon = document.createElement("i");
+        removeIcon.className = "ri-delete-bin-5-line";
+        removeLink.appendChild(removeIcon);
+        actionCell.appendChild(removeLink);
+
+        updateTotalCareAmount();
+    }
+
+    function removeCareRow(link) {
+        var row = link.parentNode.parentNode;
+        row.parentNode.removeChild(row);
+        updateTotalCareAmount();
+    }
+
+    function updateTotalCareAmount() {
+        // Assuming you have a Total Care Amount field, update it here if needed
+        // var totalCareAmountInput = document.getElementById("totalCareAmount");
+        // var amountInputs = document.getElementsByName("careAmount[]");
+        // var totalCareAmount = 0;
+
+        // for (var i = 0; i < amountInputs.length; i++) {
+        //   var amount = parseFloat(amountInputs[i].value) || 0;
+        //   totalCareAmount += amount;
+        // }
+
+        // totalCareAmountInput.value = totalCareAmount.toFixed(2);
+    }
+</script>
