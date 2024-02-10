@@ -1,0 +1,240 @@
+.main-slider.four {
+    background: var(--bannar-bg-color);
+    position: relative;
+}
+
+.main-slider.four .banner-style {
+    margin-top: 93px;
+}
+
+.slider_banner-image img {
+    max-width: 740px;
+    margin-left: 90px;
+    margin-top: 11px;
+}
+
+.slider_banner-four img {
+    width: 100%;
+}
+
+.slider-sub-title{
+    font-family: var(--secondary-font);
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 96px;
+    color: var(--link-bg-hover-color);
+}
+
+.slider_banner-four {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    z-index: 1;
+    right: 17px;
+}
+
+.main-slider.four .slider-one__carousel .owl-nav {
+    display: none;
+}
+
+.counter-number {
+    margin-left: 20%;
+    margin-top: 100px;
+    padding-bottom: 80px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+
+.main-slider.four .banner-style .banner-title {
+    font-weight: 600;
+}
+
+/* ---------------------------------- */
+/* whether-section css */
+/* --------------------------------------- */
+.whether-section.two {
+    margin-top: 102px;
+}
+
+
+/* ----------------------------- */
+/* wonderful_teams section */
+/* -------------------------------- */
+.wonderful_teams {
+    margin: 150px 0px;
+}
+
+.inner-image {
+    background: #EEEEEE;
+    border-radius: 50%;
+}
+
+.inner-image-box {
+    text-align: center;
+}
+
+.social-icon-links.clearfix {
+    display: flex;
+    justify-content: center;
+}
+
+.social-icon-links.clearfix li {
+    margin-right: 28px;
+}
+
+.social-icon-links.clearfix li a span{
+    color: #999999;
+    transition: all 500ms ease;
+}
+
+.social-icon-links.clearfix li a span:hover{
+    color:var(--primary-color);
+}
+
+.social-icon-links.clearfix li a span.active {
+    color: var(--primary-color);
+}
+
+.image-text {
+    margin: 20px 0px 15px 0px;
+}
+
+.top-sec-content {
+    margin: 60px 0px;
+}
+
+.wonderful_teams .sec-link-btn {
+    display: flex;
+    justify-content: center;
+}
+
+/* ------------------------- */
+/* service page css */
+/* ------------------------------ */
+.main-slider.five {
+    background: var(--bannar-bg-color);
+    position: relative;
+    min-height: 652px;
+}
+
+
+.main-slider.five .banner-style .banner-title {
+    font-weight: 600;
+}
+
+.main-slider.five .banner-style {
+    margin-top: 93px;
+}
+
+.main-slider.five .slider_banner-four {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    z-index: 1;
+    right:-16px;
+}
+
+.main-slider.five .slider_banner-image img {
+    max-width: 831px;
+    margin-left: 90px;
+    margin-top: -43px;
+}
+
+.solution-work .service-btn-box{
+    text-align: center;
+    margin-top: 100px;
+}
+
+.Frequently-section .sub-section-two .sub-logo {
+    margin-left: 15px;
+}
+
+.Frequently-section .sub-section-two .sub-title_sec {
+    margin: 0px 15px 0px 15px;
+}
+
+/* ------------------------- */
+/* contact page css */
+/* ------------------------ */
+
+.team-member.three .sub-section .sub-title_sec {
+    margin: 0px 15px 0px 15px;
+}
+
+.team-member .touch-items.contact {
+    background: var( --white-color);
+    box-shadow: 0px 22px 266px rgb(80 80 80 / 7%), 0px 6.63236px 151.212px rgb(80 80 80 / 4%), 0px 2.75474px 101.214px rgb(80 80 80 / 3%), 0px 0.996336px 77.543px rgb(80 80 80 / 2%);
+    border-radius: 10px;
+    max-width: 637px;
+    height: 652px;
+    margin-left: -19px;
+    padding: 68px 55px 113px 55px;
+}
+
+.team-member .touch-items.contact .contact-form input[type="text"], .touch-items.contact .contact-form input[type="email"], .touch-items.contact .contact-form input[type="password"], .touch-items.contact .contact-form select {
+    display: block;
+    width: 100%;
+    line-height: 26px;
+    height: 50px;
+    font-weight: 400;
+    font-size: 14px;
+    padding: 10px 22px;
+    color: #565872;
+    border: none;
+    background: var( --white-color);
+    box-shadow: 0px 22px 266px rgb(80 80 80 / 7%), 0px 6.63236px 151.212px rgb(80 80 80 / 4%), 0px 2.75474px 101.214px rgb(80 80 80 / 3%), 0px 0.996336px 77.543px rgb(80 80 80 / 2%);
+    outline: none;
+    transition: all 500ms ease;
+    -webkit-transition: all 500ms ease;
+    -ms-transition: all 500ms ease;
+    -o-transition: all 500ms ease;
+    font-family: var(--primary-font);
+}
+
+.team-member .touch-items.contact .contact-form textarea {
+    height: 136px;
+    resize: none;
+    font-size: 14px;
+    color: inherit;
+    background: var( --white-color);
+    box-shadow: 0px 22px 266px rgb(80 80 80 / 7%), 0px 6.63236px 151.212px rgb(80 80 80 / 4%), 0px 2.75474px 101.214px rgb(80 80 80 / 3%), 0px 0.996336px 77.543px rgb(80 80 80 / 2%);
+}
+
+.team-member .touch-items.contact .contact-form label{
+    font-family: var(--secondary-font);
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 30px;
+    color: var( --heading-color);
+    margin-top: 10px;
+}
+
+.team-member .touch-items.contact .contact-form input::placeholder{
+    font-family: var(--primary-font);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 26px;
+    color: rgba(0, 0, 0, 0.3);
+}
+
+.team-member .touch-items.contact .contact-form textarea::placeholder{
+    font-family: var(--primary-font);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 26px;
+    color: rgba(0, 0, 0, 0.3);
+}
+
+.team-member .touch-items.contact .theme-btn{
+    margin-top: 40px;
+}
+
+/* ------------------------------------ */
+/* error page style */
+/* -------------------------------------- */
+.error-link-btn .theme-btn-two{
+    margin-top: 60px;
+}

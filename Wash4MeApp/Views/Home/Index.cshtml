@@ -1,8 +1,549 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+	Layout = "~/Views/Shared/_Layoutlanding.cshtml";
 }
+<!-- main slider bannar start -->
+<section class="main-slider home-four">
+	<div class="parallax-scene parallax-scene-2 parallax-icon">
+		<span data-depth="0.40" class="parallax-layer icon icon-7"></span>
+		<span data-depth="0.50" class="parallax-layer icon icon-8"></span>
+		<span data-depth="0.50" class="parallax-layer icon icon-9"></span>
+	</div>
+	<div class="container">
+		<div class="row clearfix">
+			<div class="col-lg-7 col-md-12 col-sm-12">
+				<div class="banner-style">
+					<h1 class="banner-title">Providing Best Luandry Services</h1>
+					<p>
+						We offer the best luandry Experience - Sparkly, Refreshing and Swagalicious. <br> Wash and get commission instantly.
+					</p>
+				</div>
+				<div class="banner-btn">
+					<a class="link-btn" href="contact.html">Quick Contact <span class="flaticon-right-arrow"></span></a>
+				</div>
+			</div>
+			<div class="offset-lg-1 col-lg-4 col-md-12 col-sm-12">
+				<div class="free-estimate-block">
+					<h3 class="block-heading">Get a Free Estimate</h3>
+					<div class="contact-form">
+						<form method="post" action="inc/sendemail.php" id="contact-form">
+							<div class="form-group">
+								<input type="text" name="form_name" value="" placeholder="Your Name" required>
+							</div>
+							<div class="form-group">
+								<input type="text" name="email" value="" placeholder="Email address" required>
+							</div>
+							<div class="form-group">
+								<input type="text" name="phone" value="" placeholder="Phone number" required>
+							</div>
+							<div class="form-group">
+								<div class="select-column select-box">
+									<select class="selectmenu" id="ui-id-1">
+										<option selected="selected">Select services</option>
+										<option>Commercial Cleaning</option>
+										<option>Window Cleaning</option>
+										<option>Residental Cleaning</option>
+										<option>Kitchen Cleaning</option>
+									</select>
+								</div>
+							</div>
+							<div class="form-group">
+								<input id="form_botcheck" name="form_botcheck" class="form-control" type="hidden" value="">
+								<button class="submit-btn" type="submit" data-loading-text="Please wait...">Submit  the request <span class="flaticon-right-arrow"></span></button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="bg-shape-image">
+		<img src="~/images/background/bg-slider-shape1.png" alt="">
+	</div>
+</section>
+<!-- main slider bannar end -->
+<!-- choose section start -->
+<section class="choose-cleaner-section">
+	<div class="parallax-scene parallax-scene-3 parallax-icon">
+		<span data-depth="0.40" class="parallax-layer icon icon-1"></span>
+	</div>
+	<div class="container">
+		<div class="row clearfix">
+			<div class="col-lg-6 col-md-6 col-sm-12">
+				<div class="image-block">
+					<div class="top-image">
+						<img src="images/gallery/man-cleaner-img.png" alt="">
+					</div>
+					<div class="boder-shape-image">
+						<img src="images/shapes/border-img.png" alt="">
+					</div>
+					<div class="bottom-image">
+						<img src="images/gallery/cloth-img.png" alt="">
+					</div>
+				</div>
+			</div>
+			<div class="offset-lg-1 col-lg-5 col-md-6 col-sm-12">
+				<div class="left-column">
+					<div class="sub-section">
+						<div class="sub-logo">
+							<img src="images/icons/cleaner-icon-img.png" alt="">
+						</div>
+						<div class="sub-title_sec">
+							<p>What We Do</p>
+						</div>
+					</div>
+					<div class="chooose-section-title">
+						<h2>See Why You Should <span>Choose Clener</span></h2>
+						<p>
+							Duis dapibus elit ut elit interdum, non tempus ipsum blandit. <br> Suspendisse quis nibh et lorem dignissim semper. Ut malesuada lacus <br> nibh,
+							sit amet varius metus mattis nec.
+						</p>
+					</div>
+					<div class="number-skills style-two">
+						<!--Skill Item-->
+						<div class="number-skill-item">
+							<div class="number-skill-header clearfix">
+								<div class="number-skill-title">Cleaning</div>
+								<div class="number-skill-percentage one"><div class="count-box"><span class="count-text" data-speed="2000" data-stop="90">0</span>%</div></div>
+							</div>
+							<div class="number-skill-bar">
+								<div class="number-bar-inner"><div class="bar progress-line" data-width="90"></div></div>
+							</div>
+						</div>
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+						<!--Skill Item-->
+						<div class="number-skill-item">
+							<div class="number-skill-header clearfix">
+								<div class="number-skill-title">Washing</div>
+								<div class="number-skill-percentage two"><div class="count-box"><span class="count-text" data-speed="2000" data-stop="80">0</span>%</div></div>
+							</div>
+							<div class="number-skill-bar">
+								<div class="number-bar-inner"><div class="bar progress-line" data-width="80"></div></div>
+							</div>
+						</div>
+					</div>
+					<div class="link-btn-two">
+						<a class="theme-btn-two" href="contact.html">Quick Contact <span class="flaticon-right-arrow"></span></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- choose section start -->
+<!-- clients-one -->
+<section class="clients-one">
+	<div class="container">
+		<div class="inner-container">
+			<div class="five-item-carousel owl-carousel owl-theme owl-nav-none owl-dots-none">
+				<div class="clients-logo-box">
+					<figure class="image"><a href="index.html"><img src="images/main-slider/slider-show1.png" alt=""></a></figure>
+					<figure class="overlay-image"><a href="index.html"><img src="images/main-slider/slider-hover-img-show1.png" alt=""></a></figure>
+				</div>
+				<div class="clients-logo-box">
+					<figure class="image"><a href="index.html"><img src="images/main-slider/slider-show2.png" alt=""></a></figure>
+					<figure class="overlay-image"><a href="index.html"><img src="images/main-slider/slider-hover-img-show2.png" alt=""></a></figure>
+				</div>
+				<div class="clients-logo-box">
+					<figure class="image"><a href="index.html"><img src="images/main-slider/slider-show4.png" alt=""></a></figure>
+					<figure class="overlay-image"><a href="index.html"><img src="images/main-slider/slider-hover-img-show3.png" alt=""></a></figure>
+				</div>
+				<div class="clients-logo-box">
+					<figure class="image"><a href="index.html"><img src="images/main-slider/slider-show3.png" alt=""></a></figure>
+					<figure class="overlay-image"><a href="index.html"><img src="images/main-slider/slider-hover-img-show4.png" alt=""></a></figure>
+				</div>
+				<div class="clients-logo-box">
+					<figure class="image"><a href="index.html"><img src="images/main-slider/slider-show5.png" alt=""></a></figure>
+					<figure class="overlay-image"><a href="index.html"><img src="images/main-slider/slider-hover-img-show5.png" alt=""></a></figure>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- clients-one end -->
+<!-- solution work section start -->
+<section class="solution-work home-four">
+	<div class="shape-top-image">
+		<img src="images/background/service-top-shape-img.png" alt="">
+	</div>
+	<div class="bg-service-works">
+		<div class="container clearfix">
+			<div class="sub-section-two">
+				<div class="sub-logo">
+					<img src="images/icons/cleaner-icon-img.png" alt="">
+				</div>
+				<div class="sub-title_sec">
+					<p>What We Do</p>
+				</div>
+			</div>
+			<div class="section-title">
+				<h2>How does our <span>solution work?</span></h2>
+				<p>
+					Duis dapibus elit ut elit interdum, non tempus ipsum blandit. Suspendisse quis nibh <br> et lorem dignissim semper. Ut malesuada lacus nibh,<br>
+					sit amet varius metus mattis nec.
+				</p>
+			</div>
+			<div class="row clearfix">
+				<div class="col-lg-4 col-md-6 col-sm-12">
+					<div class="solution-block-one wow slideInUp animated animated" data-wow-delay="600ms" data-wow-duration="1500ms" style="visibility: visible; animation-duration: 1500ms; animation-delay: 600ms; animation-name: slideInUp;">
+						<div class="inner-box">
+							<div class="image-content">
+								<div class="image-box">
+									<img src="images/resource/solusted-work-img-1.png" alt="">
+								</div>
+								<div class="slide-bottom-image">
+									<img src="images/shapes/slider2-bg-bottom-img.png" alt="">
+								</div>
+							</div>
+							<div class="icon-content-box">
+								<div class="icon-img-box">
+									<img src="images/resource/Commercial-Cleaning.png" alt="">
+								</div>
+								<h4 class="single-item-title">Commercial Cleaning</h4>
+								<p class="choose_sub-title">Lorem ipsum is simply free text dolor <br> sit am ad help you ensure.</p>
+								<div class="overlay-box">
+									<a href="images/resource/Commercial-Cleaning.png" class="lightbox-image" data-fancybox="gallery"><span class="flaticon-right-arrow"></span></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6 col-sm-12 single-column">
+					<div class="solution-block-one wow slideInUp animated animated" data-wow-delay="600ms" data-wow-duration="1500ms" style="visibility: visible; animation-duration: 1500ms; animation-delay: 600ms; animation-name: slideInUp;">
+						<div class="inner-box">
+							<div class="image-content">
+								<div class="image-box">
+									<img src="images/resource/solusted-work-img-2.png" alt="">
+								</div>
+								<div class="slide-bottom-image">
+									<img src="images/shapes/slider2-bg-bottom-img.png" alt="">
+								</div>
+							</div>
+							<div class="icon-content-box">
+								<div class="icon-img-box">
+									<img src="images/resource/window-cleaner.png" alt="">
+								</div>
+								<h4 class="single-item-title">Window Cleaning</h4>
+								<p class="choose_sub-title">Lorem ipsum is simply free text dolor <br> sit am ad help you ensure.</p>
+								<div class="overlay-box">
+									<a href="images/resource/window-cleaner.png" class="lightbox-image" data-fancybox="gallery"><span class="flaticon-right-arrow"></span></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6 col-sm-12 single-column">
+					<div class="solution-block-one wow slideInUp animated animated" data-wow-delay="600ms" data-wow-duration="1500ms" style="visibility: visible; animation-duration: 1500ms; animation-delay: 600ms; animation-name: slideInUp;">
+						<div class="inner-box">
+							<div class="image-content">
+								<div class="image-box">
+									<img src="images/resource/solusted-work-img-3.png" alt="">
+								</div>
+								<div class="slide-bottom-image">
+									<img src="images/shapes/slider2-bg-bottom-img.png" alt="">
+								</div>
+							</div>
+							<div class="icon-content-box">
+								<div class="icon-img-box">
+									<img src="images/resource/Kitchen-Cleaning.png" alt="">
+								</div>
+								<h4 class="single-item-title">Kitchen Cleaning</h4>
+								<p class="choose_sub-title">Lorem ipsum is simply free text dolor <br> sit am ad help you ensure.</p>
+								<div class="overlay-box">
+									<a href="images/resource/Kitchen-Cleaning.png" class="lightbox-image" data-fancybox="gallery"><span class="flaticon-right-arrow"></span></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<h4 class="solution_sub-title">Lobortis mattis odio leo eget mauris met aliquet <a href="#"><span>semper molestie</span></a></h4>
+			<div class="sec-link-btn">
+				<div class="service-btn">
+					<a class="theme-btn-three active" href="service.html">View All Services</a>
+				</div>
+				<div class="service-btn two">
+					<a class="theme-btn-three" href="contact.html">Quick Contact</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- solution work section end -->
+<!-- memorable-gallery start -->
+<div class="memorable-gallery">
+	<div class="container">
+		<div class="row clearfix">
+			<div class="col-lg-5 col-md-6 col-sm-12">
+				<div class="sub-section">
+					<div class="sub-logo">
+						<img src="images/icons/cleaner-icon-img.png" alt="">
+					</div>
+					<div class="sub-title_sec">
+						<p>Our Portfolio</p>
+					</div>
+				</div>
+				<h2 class="section-title_three">
+					Some work from our<br> memorable <span>gallery.</span>
+				</h2>
+			</div>
+			<div class="offset-lg-2 col-lg-5 col-md-6 col-sm-12">
+				<p class="section_discription">
+					Duis dapibus elit ut elit interdum, non tempus ipsum blandit.<br>
+					Suspendisse quis nibh et
+					lorem
+					dignissim semper. Ut malesuada <br> lacus nibh, sit amet varius metus mattis nec.
+				</p>
+			</div>
+		</div>
+		<div class="row clearfix">
+			<div class="col-lg-4 col-md-6 col-sm-12">
+				<div class="memorable_inner-box">
+					<figure class="image-box"><img src="images/gallery/memorable-gallery-img-one.png" alt=""></figure>
+					<div class="content-box">
+						<div class="inner-text">
+							<div class="icon-box">
+								<span class="flaticon-plus"></span>
+							</div>
+							<h3 class="image_title">
+								<a href="project-details.html" class="contact-btn">Metus Mattis</a>
+							</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-4 col-md-6 col-sm-12">
+				<div class="memorable_inner-box">
+					<figure class="image-box"><img src="images/gallery/memorable-gallery-img-two.png" alt=""></figure>
+					<div class="content-box">
+						<div class="inner-text">
+							<div class="icon-box">
+								<span class="flaticon-plus"></span>
+							</div>
+							<h3 class="image_title">
+								<a href="project-details.html" class="contact-btn">Metus Mattis</a>
+							</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-4 col-md-6 col-sm-12">
+				<div class="memorable_inner-box">
+					<figure class="image-box"><img src="images/gallery/memorable-gallery-img-three.png" alt=""></figure>
+					<div class="content-box">
+						<div class="inner-text">
+							<div class="icon-box">
+								<span class="flaticon-plus"></span>
+							</div>
+							<h3 class="image_title">
+								<a href="project-details.html" class="contact-btn">Metus Mattis</a>
+							</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row clearfix">
+			<div class="col-lg-4 col-md-6 col-sm-12">
+				<div class="memorable_inner-box">
+					<figure class="image-box"><img src="images/gallery/memorable-gallery-img-four.png" alt=""></figure>
+					<div class="content-box">
+						<div class="inner-text">
+							<div class="icon-box">
+								<span class="flaticon-plus"></span>
+							</div>
+							<h3 class="image_title">
+								<a href="project-details.html" class="contact-btn">Metus Mattis</a>
+							</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-4 col-md-6 col-sm-12">
+				<div class="memorable_inner-box">
+					<figure class="image-box"><img src="images/gallery/memorable-gallery-img-five.png" alt=""></figure>
+					<div class="content-box">
+						<div class="inner-text">
+							<div class="icon-box">
+								<span class="flaticon-plus"></span>
+							</div>
+							<h3 class="image_title">
+								<a href="project-details.html" class="contact-btn">Metus Mattis</a>
+							</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-4 col-md-6 col-sm-12">
+				<div class="memorable_inner-box">
+					<figure class="image-box"><img src="images/gallery/memorable-gallery-img-six.png" alt=""></figure>
+					<div class="content-box">
+						<div class="inner-text">
+							<div class="icon-box">
+								<span class="flaticon-plus"></span>
+							</div>
+							<h3 class="image_title">
+								<a href="project-details.html" class="contact-btn">Metus Mattis</a>
+							</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
+<!-- memorable-gallery end -->
+<!-- service section start -->
+<section class="service-section">
+	<div class="parallax-scene parallax-scene-4 parallax-icon">
+		<span data-depth="0.40" class="parallax-layer icon icon-1"></span>
+	</div>
+	<div class="container">
+		<div class="row clearfix">
+			<div class="col-lg-4 col-md-6 col-sm-12">
+				<div class="left-column">
+					<div class="sub-section-three">
+						<div class="sub-logo">
+							<img src="images/icons/cleaner-icon-img.png" alt="">
+						</div>
+						<div class="sub-title_sec">
+							<p>Our Portfolio</p>
+						</div>
+					</div>
+					<div class="service-section-title">
+						<h2>Residential Cleaning <br> Services</h2>
+						<p>
+							Duis dapibus elit ut elit interdum, non tempus ipsum <br> blandit. Suspendisse quis nibh et lorem dignissim <br> semper. Ut malesuada lacus nibh,
+							sit amet varius <br> metus mattis nec.
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="offset-lg-1 col-lg-7 col-md-6 col-sm-12">
+				<div class="list-item-content">
+					<ul class="service-list">
+						<li><a href="#"> <span class="flaticon-right-arrow"></span> Kitchen</a></li>
+						<li><a href="#"><span class="flaticon-right-arrow"></span> Seasonal</a></li>
+						<li><a href="#"><span class="flaticon-right-arrow"></span> Move in/out</a></li>
+						<li><a href="#"><span class="flaticon-right-arrow"></span> Post construction</a></li>
+						<li><a href="#"><span class="flaticon-right-arrow"></span> Еxpress</a></li>
+					</ul>
+					<ul class="service-list">
+						<li><a href="#"> <span class="flaticon-right-arrow"></span> Bathrooms</a></li>
+						<li><a href="#"><span class="flaticon-right-arrow"></span> Bedrooms & Living Rooms</a></li>
+						<li><a href="#"><span class="flaticon-right-arrow"></span> Windows</a></li>
+						<li><a href="#"><span class="flaticon-right-arrow"></span> Extra Services</a></li>
+						<li><a href="#"><span class="flaticon-right-arrow"></span> Carpet</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="content-image-box">
+		<div class="image-content wow slideInRight animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+			<img src="images/gallery/beautiful-young-woman-holding-plastic-img.png" alt="">
+		</div>
+	</div>
+</section>
+<!-- service section end -->
+<!-- counter-section start -->
+<section class="counter-section two">
+	<div class="container">
+		<div class="counter-section_content">
+			<div class="row clearfix">
+				<div class="col-lg-3 col-md-6 col-sm-12 column counter-column">
+					<div class="inner">
+						<div class="icon-box">
+							<img src="images/icons/heart-icon-img.png" alt="">
+						</div>
+						<h4 class="counter-title">Clients</h4>
+						<div class="count-outer count-box">
+							<span class="count-text" data-speed="3000" data-stop="2000">0</span>
+							<span class="plus-tag">+</span>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6 col-sm-12 column counter-column">
+					<div class="inner">
+						<div class="icon-box">
+							<img src="images/icons/checks-icon-img.png" alt="">
+						</div>
+						<h4 class="counter-title">Jobs done</h4>
+						<div class="count-outer count-box">
+							<span class="count-text" data-speed="2000" data-stop="100">0</span>
+							<span class="plus-tag">+</span>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6 col-sm-12 column counter-column">
+					<div class="inner">
+						<div class="icon-box">
+							<img src="images/icons/persone-icon-img.png" alt="">
+						</div>
+						<h4 class="counter-title">Employees</h4>
+						<div class="count-outer count-box">
+							<span class="count-text" data-speed="4000" data-stop="800">0</span>
+							<span class="plus-tag">+</span>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6 col-sm-12 column counter-column">
+					<div class="inner">
+						<div class="icon-box">
+							<img src="images/icons/world-map-img.png" alt="">
+						</div>
+						<h4 class="counter-title">World Office</h4>
+						<div class="count-outer count-box">
+							<span class="count-text" data-speed="4000" data-stop="10">0</span>
+							<span class="plus-tag">+</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- counter-section end -->
+
+<!-- location section start -->
+<section class="our-loaction three">
+	<div class="container">
+		<div class="location-map-content">
+			<div class="row clearfix">
+				<div class="col-lg-4 col-md-6 col-sm-12">
+					<div class="location-content two">
+						<div class="location-map-icon">
+							<img src="images/resource/addres-icon-img.png" alt="">
+						</div>
+						<div class="office-address">
+							<h4>Office address</h4>
+							<p>2 Holt Street, Surry Hills, <br> Australia.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6 col-sm-12">
+					<div class="location-content two">
+						<div class="telephone-icon">
+							<img src="images/resource/akar-icons_phone.png" alt="">
+						</div>
+						<div class="contact-text">
+							<h4>Telephone number</h4>
+							<p><a href="tel:12345678900">123 - 4567 - 89 00</a></p>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6 col-sm-12">
+					<div class="location-content two">
+						<div class="mail-address-icon">
+							<img src="images/resource/charm_mail-icon.png" alt="">
+						</div>
+						<div class="mail-address-content">
+							<h4>Mail address</h4>
+							<p><a href="mailto:Inof@yourmail.org">Inof@yourmail.org</a></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- location section end -->
